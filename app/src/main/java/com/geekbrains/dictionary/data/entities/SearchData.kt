@@ -1,12 +1,13 @@
 package com.geekbrains.dictionary.data.entities
 
+import com.geekbrains.dictionary.helpers.Constants
 import com.google.gson.annotations.SerializedName
 
 data class  SearchData(
-    @SerializedName("text")
+    @SerializedName(Constants.TEXT)
     val finedText: String,
 
-    @SerializedName("meanings")
+    @SerializedName(Constants.MEANINGS)
     val translates: List<Meaning>
 )
 
