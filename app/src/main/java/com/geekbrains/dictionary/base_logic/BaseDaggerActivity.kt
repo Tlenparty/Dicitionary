@@ -8,11 +8,6 @@ import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
 import javax.inject.Inject
 
-// HasAndroidInjector - чтобы модуль(android injection module) мог найти и запровайдить зависимости
-// Обратите внимание на dispatchingAndroidInjector и интерфейс Dagger'а
-// HasAndroidInjector: мы переопределяем его метод androidInjector. Они
-// нужны для внедрения зависимостей в Activity. По своей сути — это вспомогательные методы для разработчиков под Андроид для эффективного внедрения компонентов платформы, таких как Активити, Сервис и т. п.
-
 abstract class BaseDaggerActivity : AppCompatActivity(), HasAndroidInjector {
 
     @Inject

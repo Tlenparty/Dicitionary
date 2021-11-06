@@ -34,8 +34,6 @@ import javax.inject.Singleton
 
 interface AppComponent : AndroidInjector<App> {
 
-    // Строитель компонента
-    // Зависимости для компонента
     @Component.Builder
     interface Builder {
 

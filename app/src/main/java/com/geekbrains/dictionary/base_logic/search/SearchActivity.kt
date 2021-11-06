@@ -25,7 +25,6 @@ class SearchActivity : BaseDaggerActivity() {
     private val binding: SearchActivityBinding by viewBinding(createMethod = CreateMethod.INFLATE)
     private lateinit var model: SearchViewModel
 
-    // Внедряем фабрику для создания ViewModel
     @Inject
     internal lateinit var viewModelFactory: ViewModelProvider.Factory
 
@@ -34,38 +33,27 @@ class SearchActivity : BaseDaggerActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
-        //создаем ViewModel и связываем с activity
         model = viewModelFactory.create(SearchViewModel::class.java)
         model.getLiveData().observe(this, Observer<SearchState> { renderData(it) })
-        //навешиваем обработчики
         setListeners()
     }
 
     fun renderData(state: SearchState) {
         when (state) {
-            //процесс загрузки
             is SearchState.Loading -> {
                 setVisibleView(true)
             }
-
-            //обработанный ответ
             is SearchState.Success -> {
                 setVisibleView(false)
-                //обновляем данные в списке найденных переводов
                 adapter.setData(state.data)
             }
-
-            //возникшая ошибка
             is SearchState.Error -> {
                 Snackbar.make(binding.root, state.error.toString(), Snackbar.LENGTH_LONG).show()
             }
         }
     }
 
-    //навешать различные обработчики
     private fun setListeners() = with(binding) {
-        //обработка кнопки перевода
         inputLayout.setEndIconOnClickListener {
             val value = binding.inputEditText.text.toString()
             if (value.isEmpty()) {
@@ -78,7 +66,6 @@ class SearchActivity : BaseDaggerActivity() {
             }
         }
 
-        //инициалзация списка найденных переводов
         adapter = SearchDataRVAdapter()
         recyclerView.adapter = adapter
         recyclerView.itemAnimator = DefaultItemAnimator()
@@ -90,7 +77,6 @@ class SearchActivity : BaseDaggerActivity() {
         )
     }
 
-    //показать или скрыть крутилку и найденные переводы
     private fun setVisibleView(loading: Boolean) = with(binding) {
         progressBar.isVisible = loading
         recyclerView.visibility = if (loading) View.GONE else View.VISIBLE

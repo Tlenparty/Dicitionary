@@ -33,15 +33,12 @@ class SearchDataRVAdapter: RecyclerView.Adapter<SearchDataRVAdapter.ViewHolder>(
         RecyclerView.ViewHolder(binding.root){
 
          fun setData(data: SearchData) {
-            //задаем слово, которое нашлось для перевода
             binding.searchTextId.text = data.finedText
-
-            //задаем транскрипцию и список переводов
             val translates = data.translates
             binding.transcriptionTextId.text = translates[0].transcription
             val translateStr = StringBuilder()
             translates.forEach { translate ->
-                translateStr.append(translate.translation.text).append(Constants.semicolon)
+                translateStr.append(translate.translation.text).append(Constants.SEMICOLON)
             }
             binding.translateTextId.text = translateStr
         }
