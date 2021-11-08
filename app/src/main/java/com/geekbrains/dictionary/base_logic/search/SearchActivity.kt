@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,27 +12,27 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geekbrains.dictionary.R
 import com.geekbrains.dictionary.base_logic.search.adapter.SearchDataRVAdapter
 import com.geekbrains.dictionary.databinding.SearchActivityBinding
-import com.geekbrains.dictionary.base_logic.BaseDaggerActivity
+import com.geekbrains.dictionary.base_logic.BaseDiActivity
+import com.geekbrains.dictionary.helpers.consts.Scopes
 import com.geekbrains.dictionary.helpers.extensions.isOnline
 import com.geekbrains.dictionary.states.SearchState
 import com.geekbrains.dictionary.viewmodel.SearchViewModel
 import com.google.android.material.snackbar.Snackbar
-import javax.inject.Inject
+import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.qualifier.named
 
-class SearchActivity : BaseDaggerActivity() {
+class SearchActivity : BaseDiActivity() {
 
     private val binding: SearchActivityBinding by viewBinding(createMethod = CreateMethod.INFLATE)
-    private lateinit var model: SearchViewModel
 
-    @Inject
-    internal lateinit var viewModelFactory: ViewModelProvider.Factory
+    private val model: SearchViewModel by viewModel(qualifier = named(Scopes.SEARCH_VIEW_MODEL))
 
-    private lateinit var adapter: SearchDataRVAdapter
+    private val adapter: SearchDataRVAdapter by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        model = viewModelFactory.create(SearchViewModel::class.java)
         model.getLiveData().observe(this, Observer<SearchState> { renderData(it) })
         setListeners()
     }
@@ -66,7 +65,6 @@ class SearchActivity : BaseDaggerActivity() {
             }
         }
 
-        adapter = SearchDataRVAdapter()
         recyclerView.adapter = adapter
         recyclerView.itemAnimator = DefaultItemAnimator()
         recyclerView.addItemDecoration(
