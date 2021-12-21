@@ -9,4 +9,5 @@ object Constants {
     const val TEXT = "text"
     const val MEANINGS = "meanings"
     const val NOTE = "note"
+    const val IMAGE_URL = "imageUrl"
 }

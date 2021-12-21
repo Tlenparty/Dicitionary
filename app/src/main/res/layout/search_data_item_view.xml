@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,51 +11,44 @@
         android:id="@+id/search_text_title_id"
         style="@style/TranslateTitleStyle"
         android:text="@string/search_text_title"
+        app:layout_constraintEnd_toStartOf="@id/favorite_id"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/search_text_id"
         style="@style/TranslateTextStyle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_text_title_id"/>
-
-    <!-- транскрипция -->
-    <TextView
-        android:id="@+id/transcription_title_id"
-        style="@style/TranslateTitleStyle"
-        android:text="@string/transcription_title"
-        android:paddingTop="@dimen/padding"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_text_id"/>
-    <TextView
-        android:id="@+id/transcription_text_id"
-        style="@style/TranslateTextStyle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/transcription_title_id"/>
+        app:layout_constraintEnd_toStartOf="@id/favorite_id"
+        app:layout_constraintStart_toStartOf="@+id/favorite_id"
+        app:layout_constraintTop_toBottomOf="@id/search_text_title_id" />
 
     <!-- перевод слова -->
     <TextView
         android:id="@+id/translate_title_id"
         style="@style/TranslateTitleStyle"
-        android:text="@string/translate_title"
         android:paddingTop="@dimen/padding"
+        android:text="@string/translate_title"
+        app:layout_constraintEnd_toStartOf="@id/favorite_id"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/transcription_text_id"/>
+        app:layout_constraintTop_toBottomOf="@id/search_text_id" />
+
     <TextView
         android:id="@+id/translate_text_id"
         style="@style/TranslateTextStyle"
+        app:layout_constraintEnd_toStartOf="@id/favorite_id"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/translate_title_id"/>
+        app:layout_constraintTop_toBottomOf="@id/translate_title_id" />
 
-    <!-- разделитель (костыльный recyclerItemDecoration)-->
-    <View xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/hairline"
-        android:layout_marginTop="@dimen/margin_small"
-        android:background="@color/color_gray"
-        app:layout_constraintTop_toBottomOf="@+id/translate_text_id"
-        app:layout_constraintStart_toStartOf="parent"
+    <!-- иконка избранного -->
+    <ImageView
+        android:id="@+id/favorite_id"
+        android:layout_width="@dimen/favorite_size"
+        android:layout_height="@dimen/favorite_size"
+        android:layout_marginEnd="@dimen/padding"
+        android:background="@drawable/icon_favorite_off"
+        android:paddingTop="@dimen/padding"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="RedundantNamespace" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
