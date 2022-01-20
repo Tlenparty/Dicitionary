@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.geekbrains.dictionary.data.entities.SearchData
 import com.geekbrains.dictionary.databinding.SearchDataItemViewBinding
-import com.geekbrains.dictionary.helpers.Constants
+import com.geekbrains.dictionary.helpers.consts.Constants
 import java.lang.StringBuilder
 
 class SearchDataRVAdapter: RecyclerView.Adapter<SearchDataRVAdapter.ViewHolder>() {
