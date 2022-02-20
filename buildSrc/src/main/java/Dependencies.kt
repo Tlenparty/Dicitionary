@@ -22,7 +22,7 @@ object Versions {
     const val okHttpVersion = "4.9.2"
     const val rxJavaAdapterVersion = "1.0.0"
     const val ktx = "1.6.0"
-    const val appCompat = "3.4.0"
+    const val appCompat = "1.3.1"
     const val materialVersions = "1.4.0"
     const val constraintLayout = "2.1.1"
     const val swipeRefreshLayout = "1.1.0"
@@ -37,11 +37,9 @@ object Versions {
 object Retrofit {
     const val Retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofitVersions}"
     const val ConverterGson = "com.squareup.retrofit2:converter-gson:${Versions.retrofitVersions}"
-    const val LoginInterceptor =
-        "com.squareup.okhttp3:logging-interceptor:${Versions.okHttpVersion}"
-    const val RetrofitCoroutine = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofitCoroutineVersion}"
-    const val RxJavaAdapter =
-        "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:${Versions.rxJavaAdapterVersion}"
+    const val LoginInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttpVersion}"
+    const val RetrofitCoroutine = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.retrofitCoroutineVersion}"
+    const val RxJavaAdapter = "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:${Versions.rxJavaAdapterVersion}"
 }
 
 object Android {
