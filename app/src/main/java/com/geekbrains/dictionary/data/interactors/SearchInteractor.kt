@@ -1,9 +1,9 @@
-package com.geekbrains.dictionary.data.repositories
+package com.geekbrains.dictionary.data.interactors
 
 import com.geekbrains.dictionary.data.entities.SearchData
 import io.reactivex.Single
 
-interface SearchRepository {
+interface SearchInteractor {
 
     suspend fun search(word: String): List<SearchData>
 }

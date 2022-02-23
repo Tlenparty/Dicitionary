@@ -1,14 +1,17 @@
 package com.geekbrains.dictionary.base_logic.search.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.geekbrains.dictionary.data.entities.SearchData
 import com.geekbrains.dictionary.databinding.SearchDataItemViewBinding
+import com.geekbrains.dictionary.helpers.consts.Constants
 import java.lang.StringBuilder
 
-class SearchDataRVAdapter(private val searchDataListPresenter: SearchDataListPresenter) :
-    RecyclerView.Adapter<SearchDataRVAdapter.ViewHolder>() {
+class SearchDataRVAdapter: RecyclerView.Adapter<SearchDataRVAdapter.ViewHolder>() {
+
+    private var searchData = listOf<SearchData>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
         ViewHolder(
@@ -20,28 +23,31 @@ class SearchDataRVAdapter(private val searchDataListPresenter: SearchDataListPre
         )
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        searchDataListPresenter.bindView(holder.apply { currentPosition = position })
+        val data = searchData[position]
+        holder.setData(data)
     }
 
-    override fun getItemCount(): Int = searchDataListPresenter.getCount()
+    override fun getItemCount(): Int = searchData.size
 
     inner class ViewHolder(private val binding: SearchDataItemViewBinding) :
-        RecyclerView.ViewHolder(binding.root), SearchDataItemView {
+        RecyclerView.ViewHolder(binding.root){
 
-        override var currentPosition = -1
-        override fun setData(data: SearchData) {
-            //задаем слово, которое нашлось для перевода
+         fun setData(data: SearchData) {
             binding.searchTextId.text = data.finedText
-
-            //задаем транскрипцию и список переводов
             val translates = data.translates
             binding.transcriptionTextId.text = translates[0].transcription
             val translateStr = StringBuilder()
             translates.forEach { translate ->
-                translateStr.append(translate.translation.text).append("; ")
+                translateStr.append(translate.translation.text).append(Constants.SEMICOLON)
             }
             binding.translateTextId.text = translateStr
         }
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun setData(data: List<SearchData>) {
+        this.searchData = data
+        notifyDataSetChanged()
     }
 
 }
