@@ -5,6 +5,9 @@
     <dimen name="zero">0dp</dimen>
     <dimen name="text_size_mini">12sp</dimen>
     <dimen name="text_size">16sp</dimen>
+    <dimen name="bottom_app_size">56dp</dimen>
+    <dimen name="fined_dialog_size">300dp</dimen>
+    <dimen name="favorite_size">48dp</dimen>
 
     //Margins
     <dimen name="hairline">1px</dimen>

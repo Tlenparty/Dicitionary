@@ -5,11 +5,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.geekbrains.dictionary.states.BaseState
-import com.geekbrains.dictionary.states.SearchState
-import io.reactivex.disposables.CompositeDisposable
 import kotlinx.coroutines.*
 
-abstract class BaseViewModel<S : SearchState> : ViewModel() {
+abstract class BaseViewModel<S : BaseState> : ViewModel() {
 
     protected val liveData: MutableLiveData<S> = MutableLiveData()
     protected val coroutineScope: CoroutineScope by lazy {

@@ -2,7 +2,7 @@ package com.geekbrains.dictionary
 
 import android.app.Application
 import com.geekbrains.dictionary.di.module.DictionaryApiModule
-import com.geekbrains.dictionary.di.module.KoinModule
+import com.geekbrains.dictionary.di.module.KoinModules
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -14,10 +14,11 @@ class App : Application() {
             androidContext(this@App)
             modules(
                 DictionaryApiModule.create(),
-                KoinModule.application,
-                KoinModule.searchModule
+                KoinModules.application,
+                KoinModules.searchModule,
+                KoinModules.searchDetailModule,
+                KoinModules.favoriteModule
             )
         }
     }
-
 }

@@ -7,4 +7,17 @@
     <string name="transcription_title">Транскрипция</string>
     <string name="search_text_title">Найденное слово</string>
     <string name="no_connect">Нет подключение к интернету</string>
+    <string name="find_internet">В интернете</string>
+    <string name="find_db">В БД</string>
+
+    <!-- диалоговое окно -->
+    <string name="text_info_error_title">О Ш И Б К А</string>
+    <string name="button_close">Закрыть</string>
+    <string name="button_fined">Найти</string>
+    <string name="input_word_title">Поиск слова</string>
+    <string name="input_word_message">Введите слово для поиска в БД</string>
+
+    <!-- меню -->
+    <string name="menu_favorite">Избранное</string>
+    <string name="menu_history">История поиска</string>
 </resources>
