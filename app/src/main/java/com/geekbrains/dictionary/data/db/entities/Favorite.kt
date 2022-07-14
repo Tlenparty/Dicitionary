@@ -3,7 +3,7 @@ package com.geekbrains.dictionary.data.db.entities
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.geekbrains.dictionary.consts.DB
+import com.geekbrains.dictionary.helpers.consts.DB
 
 @Entity(tableName = DB.TABLE_FAVORITE)
 data class Favorite(
