@@ -2,8 +2,8 @@ package com.geekbrains.dictionary.di.module
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.geekbrains.dictionary.api.DictionaryApi
-import com.geekbrains.dictionary.helpers.consts.Api
-import com.geekbrains.dictionary.helpers.consts.Scopes
+import com.geekbrains.dictionary.consts.Api
+import com.geekbrains.core_helpers.consts.Scopes
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.core.qualifier.named

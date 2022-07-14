@@ -1,7 +1,7 @@
 package com.geekbrains.dictionary.data.db.entities
 
 import androidx.room.*
-import com.geekbrains.dictionary.helpers.consts.DB
+import com.geekbrains.dictionary.consts.DB
 
 @Entity(
     tableName = DB.TABLE_SEARCH_HISTORY,

@@ -17,8 +17,8 @@ import com.geekbrains.dictionary.base_logic.search.adapter.SearchDataRVAdapter
 import com.geekbrains.dictionary.base_logic.search_detail.SearchDetailFragment
 import com.geekbrains.dictionary.data.entities.SearchData
 import com.geekbrains.dictionary.databinding.FavoriteFragmentBinding
-import com.geekbrains.dictionary.helpers.consts.Scopes
-import com.geekbrains.dictionary.helpers.extensions.showMessage
+import com.geekbrains.core_helpers.consts.Scopes
+import com.geekbrains.dictionary.extensions.showMessage
 import com.geekbrains.dictionary.states.FavoriteState
 import com.geekbrains.dictionary.viewmodel.FavoriteViewModel
 import org.koin.android.ext.android.inject

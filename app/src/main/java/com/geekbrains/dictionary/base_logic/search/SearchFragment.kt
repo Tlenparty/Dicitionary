@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.*
-import android.widget.EditText
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -18,12 +17,11 @@ import com.geekbrains.dictionary.base_logic.main.AppActivity
 import com.geekbrains.dictionary.base_logic.search.adapter.SearchDataRVAdapter
 import com.geekbrains.dictionary.base_logic.search_detail.SearchDetailFragment
 import com.geekbrains.dictionary.databinding.SearchFragmentBinding
-import com.geekbrains.dictionary.helpers.consts.Scopes
-import com.geekbrains.dictionary.helpers.extensions.isOnline
-import com.geekbrains.dictionary.helpers.extensions.showMessage
+import com.geekbrains.core_helpers.consts.Scopes
+import com.geekbrains.dictionary.extensions.isOnline
+import com.geekbrains.dictionary.extensions.showMessage
 import com.geekbrains.dictionary.states.SearchState
 import com.geekbrains.dictionary.viewmodel.SearchViewModel
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.koin.android.ext.android.inject
 import org.koin.core.qualifier.named
 import org.koin.androidx.viewmodel.ext.android.viewModel

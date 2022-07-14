@@ -1,4 +1,4 @@
-package com.geekbrains.dictionary.helpers.consts
+package com.geekbrains.dictionary.consts
 
 object Constants {
     const val SEMICOLON = "; "

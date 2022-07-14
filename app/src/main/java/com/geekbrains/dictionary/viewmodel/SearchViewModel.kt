@@ -7,8 +7,7 @@ import com.geekbrains.dictionary.data.db.entities.SearchDataDB
 import com.geekbrains.dictionary.data.db.entities.SearchHistory
 import com.geekbrains.dictionary.data.entities.SearchData
 import com.geekbrains.dictionary.data.interactors.SearchInteractor
-import com.geekbrains.dictionary.data.interactors.SearchInteractorImpl
-import com.geekbrains.dictionary.helpers.consts.General
+import com.geekbrains.core_helpers.consts.General
 import com.geekbrains.dictionary.states.SearchState
 import kotlinx.coroutines.launch
 

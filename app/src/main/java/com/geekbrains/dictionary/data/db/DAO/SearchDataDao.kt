@@ -3,7 +3,7 @@ package com.geekbrains.dictionary.data.db.DAO
 import androidx.room.*
 import com.geekbrains.dictionary.data.db.entities.SearchDataDB
 import com.geekbrains.dictionary.data.db.entities.WordTranslates
-import com.geekbrains.dictionary.helpers.consts.DB
+import com.geekbrains.dictionary.consts.DB
 
 @Dao
 interface SearchDataDao {

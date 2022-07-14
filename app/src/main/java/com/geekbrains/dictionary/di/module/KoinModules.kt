@@ -7,8 +7,8 @@ import com.geekbrains.dictionary.data.interactors.SearchInteractor
 import com.geekbrains.dictionary.data.interactors.SearchInteractorImpl
 import com.geekbrains.dictionary.data.repositories.SearchRepository
 import com.geekbrains.dictionary.data.repositories.SearchRepositoryImpl
-import com.geekbrains.dictionary.helpers.consts.DB
-import com.geekbrains.dictionary.helpers.consts.Scopes
+import com.geekbrains.dictionary.consts.DB
+import com.geekbrains.core_helpers.consts.Scopes
 import com.geekbrains.dictionary.viewmodel.FavoriteViewModel
 import com.geekbrains.dictionary.viewmodel.SearchDetailViewModel
 import com.geekbrains.dictionary.viewmodel.SearchViewModel

@@ -2,7 +2,7 @@ package com.geekbrains.dictionary.data.db.DAO
 
 import androidx.room.*
 import com.geekbrains.dictionary.data.db.entities.Favorite
-import com.geekbrains.dictionary.helpers.consts.DB
+import com.geekbrains.dictionary.consts.DB
 
 @Dao
 interface FavoriteDao {

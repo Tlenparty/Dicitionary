@@ -11,9 +11,9 @@ import androidx.lifecycle.Observer
 import com.geekbrains.dictionary.base_logic.BaseDiFragment
 import com.geekbrains.dictionary.data.db.entities.WordTranslates
 import com.geekbrains.dictionary.databinding.SearchDetailFragmentBinding
-import com.geekbrains.dictionary.helpers.consts.DB
-import com.geekbrains.dictionary.helpers.consts.Scopes
-import com.geekbrains.dictionary.helpers.extensions.showMessage
+import com.geekbrains.dictionary.consts.DB
+import com.geekbrains.core_helpers.consts.Scopes
+import com.geekbrains.dictionary.extensions.showMessage
 import com.geekbrains.dictionary.states.SearchDetailState
 import com.geekbrains.dictionary.viewmodel.SearchDetailViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel

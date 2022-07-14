@@ -3,7 +3,7 @@ package com.geekbrains.dictionary.data.db
 import androidx.room.*
 import com.geekbrains.dictionary.data.db.DAO.*
 import com.geekbrains.dictionary.data.db.entities.*
-import com.geekbrains.dictionary.helpers.consts.DB
+import com.geekbrains.dictionary.consts.DB
 
 @Database(
     entities = [

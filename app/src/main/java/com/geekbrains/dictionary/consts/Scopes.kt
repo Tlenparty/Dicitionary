@@ -1,4 +1,4 @@
-package com.geekbrains.dictionary.helpers.consts
+package com.geekbrains.core_helpers.consts
 
 object Scopes {
     const val API_MODULE = "dictionaryApiModule"

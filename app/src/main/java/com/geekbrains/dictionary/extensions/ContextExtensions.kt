@@ -1,4 +1,4 @@
-package com.geekbrains.dictionary.helpers.extensions
+package com.geekbrains.dictionary.extensions
 
 import android.content.Context
 import android.net.ConnectivityManager

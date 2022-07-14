@@ -2,7 +2,7 @@ package com.geekbrains.dictionary.data.db.entities
 
 import androidx.room.Embedded
 import androidx.room.Relation
-import com.geekbrains.dictionary.helpers.consts.DB
+import com.geekbrains.dictionary.consts.DB
 
 // Найденное слово со всеми переводами
 data class WordTranslates(
