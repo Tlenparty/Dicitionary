@@ -20,7 +20,7 @@ object DB {
     const val MEANING_ID = "meaning_id"
     const val PART_OF_SPEECH_CODE = "part_of_speech_code"
     const val TRANSCRIPTION = "transcription"
-    const val IMAGE_URL = "image_rl"
+    const val IMAGE_URL = "image_url"
     const val TEXT = "text"
     const val NOTE = "note"
 }

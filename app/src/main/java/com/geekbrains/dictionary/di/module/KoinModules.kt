@@ -9,6 +9,7 @@ import com.geekbrains.dictionary.data.repositories.SearchRepository
 import com.geekbrains.dictionary.data.repositories.SearchRepositoryImpl
 import com.geekbrains.dictionary.helpers.consts.DB
 import com.geekbrains.core_helpers.consts.Scopes
+import com.geekbrains.dictionary.data.db.entities.Favorite
 import com.geekbrains.dictionary.viewmodel.FavoriteViewModel
 import com.geekbrains.dictionary.viewmodel.SearchDetailViewModel
 import com.geekbrains.dictionary.viewmodel.SearchViewModel
@@ -22,6 +23,7 @@ object KoinModules {
     val application = module {
         single<SearchRepository>() { SearchRepositoryImpl(dictionaryApi = get(qualifier = named(Scopes.API_MODULE))) }
         single<AppDB> { Room.databaseBuilder(get(), AppDB::class.java, DB.NAME).build() }
+        single{get<AppDB>().searchHistoryDao()}
     }
 
     //модуль окна с поиском слова
